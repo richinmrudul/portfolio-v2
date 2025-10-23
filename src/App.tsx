@@ -1,7 +1,14 @@
-export default function App() {
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+
+const App: React.FC = () => {
   return (
-    <div className="text-4xl text-cyan-400 text-center mt-10">
-      Tailwind is working ✨
+    <div className="font-sans bg-slate-900 text-white">
+      <Navbar />
+      <Hero />
     </div>
   );
-}
+};
+
+export default App;
