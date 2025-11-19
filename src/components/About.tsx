@@ -14,17 +14,17 @@ const About: React.FC = () => {
           About Me
         </motion.h2>
 
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+        <div className="flex flex-col md:flex-row items-center gap-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex-shrink-0"
+            className="flex-shrink-0 flex justify-center"
           >
             <img
               src="/richin-headshot.png"
               alt="Richin Mrudul"
-              className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover"
+              className="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover"
               style={{
                 objectPosition: "center 20%"
               }}
