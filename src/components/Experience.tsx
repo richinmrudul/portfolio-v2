@@ -16,9 +16,9 @@ const experiences: Experience[] = [
     company: "Boilerexams",
     dates: "August 2025 - Present",
     bullets: [
-      "Contributing to the backend infrastructure of a study platform serving 30,000+ Purdue students, helping maintain reliability under high traffic and optimize endpoints for hundreds of concurrent requests during exams, including finals spike.",
-      "Supporting backend systems powering 8.5M+ submissions, 380k+ study hours, and 193+ Purdue exams, contributing to infrastructure and endpoints handling data ingestion, accuracy tracking, and high-volume activity across 3,000+ questions.",
-      "Rewriting core API endpoints in Go (Golang) to improve modularity, reduce latency, and scale more efficiently under exam load; containerizing services using Docker, optimizing PostgreSQL queries, and strengthening error handling and logging."
+      "Help maintain and improve backend infrastructure for a study platform used by 30,000+ Purdue students, ensuring reliability during high-traffic exam periods and finals week spikes.",
+      "Support backend systems powering 8.5M+ submissions, 380k+ study hours, and 190+ Purdue exams, working on endpoints that handle large-scale data ingestion, accuracy tracking, and activity across 3,000+ questions.",
+      "Rewrite core API endpoints in Go (Golang) to improve performance, reduce latency, and handle heavy exam load more efficiently; containerize services with Docker, optimize PostgreSQL queries, and strengthen error handling + logging."
     ],
     icon: "BE",
     position: "right"
