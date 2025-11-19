@@ -28,9 +28,9 @@ const experiences: Experience[] = [
     company: "Profitize",
     dates: "July 2025 - Present",
     bullets: [
-      "Built a SaaS platform for 500+ Amazon FBA/FBM sellers to automate profit analysis, CSV-based reporting, and product research using live Amazon data, cutting manual effort and improving insight quality across product categories.",
-      "Engineered full-stack system using React, Python, Playwright, Selenium, and RapidFuzz to reduce manual research time by ~80% through dynamic scraping, real-time fuzzy matching, and cross-referencing of Amazon product listings.",
-      "Shipped production-ready frontend/backend with Netlify, Render, and GitHub Actions CI/CD, improving release speed by 60% and achieving <2s load times across devices through mobile-first design and automated staging workflows."
+      "Built a SaaS platform for 500+ Amazon FBA/FBM sellers, automating profit analysis, CSV reporting, and product research using live Amazon data — reducing manual work and improving insight quality across product categories.",
+      "Developed a full-stack system using React, Python, Playwright, Selenium, and RapidFuzz, reducing manual research time by ~80% through dynamic scraping, real-time fuzzy matching, and automated cross-referencing of Amazon listings.",
+      "Deployed production-ready frontend and backend using Netlify, Render, and GitHub Actions CI/CD, improving release speed by 60% and achieving <2s load times across devices through mobile-first design and automated staging workflows."
     ],
     icon: "P",
     position: "left"
