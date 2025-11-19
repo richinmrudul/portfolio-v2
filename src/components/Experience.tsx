@@ -115,7 +115,10 @@ const Experience: React.FC = () => {
                 {/* Content Card */}
                 <div className={`flex-1 ${exp.position === "left" ? "text-right" : "text-left"}`}>
                   <div className="bg-slate-800/80 rounded-lg p-6 border border-cyan-500/30 hover:border-cyan-500/60 transition-colors">
-                    <h3 className="text-2xl font-bold text-white mb-1">{exp.title}</h3>
+                    <div className={`flex ${exp.position === "left" ? "justify-end" : "justify-start"} items-baseline gap-3 mb-1 flex-wrap`}>
+                      <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
+                      <span className="text-white text-sm">{exp.dates}</span>
+                    </div>
                     <p className="text-gray-300 mb-4">{exp.company}</p>
                     <ul className="space-y-2 text-gray-300 list-disc list-inside">
                       {exp.bullets.map((bullet, i) => (
@@ -129,12 +132,6 @@ const Experience: React.FC = () => {
                 <div className="relative flex-shrink-0">
                   <div className="w-16 h-16 rounded-full bg-slate-900 border-4 border-white flex items-center justify-center z-10">
                     <span className="text-white font-bold text-sm">{exp.icon}</span>
-                  </div>
-                  {/* Date */}
-                  <div className={`absolute top-1/2 transform -translate-y-1/2 whitespace-nowrap ${
-                    exp.position === "left" ? "right-full mr-4" : "left-full ml-4"
-                  }`}>
-                    <span className="text-white text-sm">{exp.dates}</span>
                   </div>
                 </div>
 
