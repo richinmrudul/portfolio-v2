@@ -40,10 +40,10 @@ const experiences: Experience[] = [
     company: "The Data Mine - Purdue University (Corteva Agriscience)",
     dates: "August 2025 - Present",
     bullets: [
-      "Developing an internal HR onboarding chatbot using LLMs with a Retrieval-Augmented Generation (RAG) pipeline, collaborating with Corteva Agriscience through The Data Mine to streamline employee onboarding processes.",
-      "Leveraging LangChain, LangGraph, and OpenAI models to enhance context retention and accuracy for employee questions, improving the chatbot's ability to provide relevant and precise responses.",
-      "Containerizing and deploying the system in Docker while utilizing Python, R, and SQL for large-scale data analysis, establishing a robust foundation for production deployment and scalability.",
-      "Iteratively improving chatbot performance through employee testing and accuracy benchmarks, ensuring the solution meets real-world requirements and user expectations."
+      "Building an internal HR onboarding chatbot using LLMs and a RAG pipeline, helping Corteva Agriscience streamline employee onboarding and reduce manual workload.",
+      "Using LangChain, LangGraph, and OpenAI models to improve context retention and response accuracy, enabling the chatbot to answer employee questions more reliably.",
+      "Containerizing and deploying the system with Docker, and using Python, R, and SQL for large-scale data analysis to ensure the solution is production-ready and scalable.",
+      "Iterating on chatbot performance through employee testing and accuracy benchmarks, ensuring the tool meets real-world requirements and improves over time."
     ],
     icon: "DM",
     position: "right"
