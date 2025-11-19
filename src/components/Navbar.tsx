@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
 const Navbar: React.FC = () => {
-  const links = ["home", "about", "projects", "contact"];
+  const links = ["home", "about", "experience", "projects", "contact"];
 
   return (
     <motion.nav
