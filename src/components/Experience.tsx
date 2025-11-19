@@ -64,9 +64,9 @@ const experiences: Experience[] = [
     company: "The Data Mine - Purdue University (Indiana Soybean Alliance)",
     dates: "August 2024 - May 2025",
     bullets: [
-      "Collaborated with the Indiana Soybean Alliance to develop an AI-enhanced tool that reduced data collection time by 96.41% (428.4s → 14.31s), drastically improving efficiency and performance over the prior year's manual workflow.",
-      "Integrated large language models (LLMs) like ChatGPT to streamline program classification workflows, enhance overall user interaction quality and experience, and enable automated data analysis through natural language processing techniques.",
-      "Migrated hard-coded datasets to a live PostgreSQL database, enabling real-time data updates, advanced search functionality, and efficient admin publishing and content control through a fully integrated, user-friendly dashboard interface."
+      "Worked with the Indiana Soybean Alliance to build an AI-powered tool that cut data collection time by 96% (428s → 14s), massively improving efficiency over the previous manual workflow.",
+      "Used LLMS like ChatGPT to automate program classification and data analysis, improving usability, accuracy, and overall user experience.",
+      "Migrated static datasets into a live PostgreSQL database, enabling real-time updates, advanced search, and a smoother admin workflow through a unified, user-friendly dashboard."
     ],
     icon: "DM",
     position: "right"
