@@ -53,8 +53,8 @@ const experiences: Experience[] = [
     company: "Purdue Computer Science Club",
     dates: "August 2025 - Present",
     bullets: [
-      "Designed and developed the official Purdue CS Club website using Next.js, TypeScript, Tailwind, and Framer Motion.",
-      "Implemented a scalable component system and modern UI/UX including dynamic event filtering, mobile-optimized navigation, modals, and consistent theming."
+      "Designed and built the official Purdue CS Club website using Next.js, TypeScript, Tailwind, and Framer Motion, creating a fast, modern, and responsive platform for students.",
+      "Implemented a scalable component system with dynamic event filtering, mobile-friendly navigation, polished modals, and consistent theming to improve usability and the overall club experience."
     ],
     icon: "CS",
     position: "left"
