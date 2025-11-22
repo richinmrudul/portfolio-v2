@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import PokeballIcon from "./PokeballIcon";
 
 interface Project {
   title: string;
@@ -51,26 +52,29 @@ const getTypeConfig = (type: "electric" | "fire" | "psychic") => {
     electric: {
       emoji: "⚡",
       name: "Electric",
-      glow: "shadow-[0_0_20px_#FFD34E]",
-      hoverGlow: "hover:shadow-[0_0_30px_#FFD34E]",
-      border: "border-pokemon-yellow/50",
+      glow: "shadow-[0_0_15px_rgba(255,211,78,0.4)]",
+      hoverGlow: "hover:shadow-[0_0_20px_rgba(255,211,78,0.5)]",
+      border: "border-[1px] border-yellow-300/30",
       bg: "bg-pokemon-yellow/10",
+      stripe: "bg-gradient-to-r from-yellow-400 to-yellow-200",
     },
     fire: {
       emoji: "🔥",
       name: "Fire",
-      glow: "shadow-[0_0_20px_#FF3E4D]",
-      hoverGlow: "hover:shadow-[0_0_30px_#FF3E4D]",
-      border: "border-pokemon-red/50",
+      glow: "shadow-[0_0_15px_rgba(255,62,77,0.4)]",
+      hoverGlow: "hover:shadow-[0_0_20px_rgba(255,62,77,0.5)]",
+      border: "border-[1px] border-red-400/30",
       bg: "bg-pokemon-red/10",
+      stripe: "bg-gradient-to-r from-red-500 to-orange-400",
     },
     psychic: {
       emoji: "🧠",
       name: "Psychic",
-      glow: "shadow-[0_0_20px_#A855F7]",
-      hoverGlow: "hover:shadow-[0_0_30px_#A855F7]",
-      border: "border-purple-500/50",
+      glow: "shadow-[0_0_15px_rgba(168,85,247,0.4)]",
+      hoverGlow: "hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]",
+      border: "border-[1px] border-purple-400/30",
       bg: "bg-purple-500/10",
+      stripe: "bg-gradient-to-r from-purple-500 to-pink-400",
     },
   };
   return configs[type];
@@ -90,42 +94,53 @@ const Projects: React.FC = () => {
             return (
               <motion.div
                 key={i}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ rotate: 0.5, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className={`rounded-2xl border ${typeConfig.border} p-6 bg-slate-900/40 ${typeConfig.glow} ${typeConfig.hoverGlow} transition-all duration-300`}
+                className={`relative rounded-2xl ${typeConfig.border} p-0 bg-slate-900/40 ${typeConfig.glow} ${typeConfig.hoverGlow} transition-all duration-300 overflow-hidden`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-2xl font-bold text-pokemon-yellow">{project.title}</h3>
-                  <div className={`${typeConfig.bg} border ${typeConfig.border} px-2 py-1 text-xs rounded-full flex items-center gap-1`}>
-                    <span>{typeConfig.emoji}</span>
-                    <span>{typeConfig.name}</span>
+                {/* Gradient Stripe at Top */}
+                <div className={`h-1 w-full ${typeConfig.stripe}`} />
+                
+                {/* Content */}
+                <div className="p-6 relative">
+                  {/* Pokéball Watermark */}
+                  <div className="absolute bottom-2 right-2 opacity-[0.05] pointer-events-none">
+                    <PokeballIcon size={120} />
                   </div>
-                </div>
-                <p className="text-gray-400 text-sm mb-4">{project.tech}</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-300 mb-4">
-                  {project.description.map((desc, j) => (
-                    <li key={j}>{desc}</li>
-                  ))}
-                </ul>
-                <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-pokemon-red transition"
-                  >
-                    <FaGithub size={22} />
-                  </a>
-                  {project.demo && (
+                  
+                  <div className="flex items-center justify-between mb-2 relative z-10">
+                    <h3 className="text-2xl font-semibold text-pokemon-yellow tracking-wide">{project.title}</h3>
+                    <div className={`${typeConfig.bg} border ${typeConfig.border} px-1.5 py-0.5 text-[10px] rounded-full flex items-center gap-0.5 font-medium`}>
+                      <span className="text-xs">{typeConfig.emoji}</span>
+                      <span>{typeConfig.name}</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-400 text-sm mb-4 relative z-10">{project.tech}</p>
+                  <ul className="list-disc list-inside space-y-1 text-gray-300 mb-4 relative z-10">
+                    {project.description.map((desc, j) => (
+                      <li key={j}>{desc}</li>
+                    ))}
+                  </ul>
+                  <div className="flex gap-4 relative z-10">
                     <a
-                      href={project.demo}
+                      href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-pokemon-red transition"
                     >
-                      <FaExternalLinkAlt size={20} />
+                      <FaGithub size={22} />
                     </a>
-                  )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-pokemon-red transition"
+                      >
+                        <FaExternalLinkAlt size={20} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             );
