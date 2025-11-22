@@ -49,95 +49,82 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-20 bg-slate-950 text-white">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
+        <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="text-4xl font-bold text-pokemon-yellow mb-8 text-center"
         >
-          <h2 className="text-4xl font-bold text-pokemon-yellow mb-8 text-center">
-            Trainer Bio
-          </h2>
+          Trainer Bio
+        </motion.h2>
 
-          {/* Trainer Card Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-pokemon-offnavy/60 backdrop-blur-sm border border-pokemon-yellow/30 rounded-lg p-6 mb-8 max-w-2xl mx-auto"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex flex-col">
-                <span className="text-sm text-gray-400 uppercase tracking-wider mb-1">Major</span>
-                <span className="text-lg font-semibold text-pokemon-yellow">Computer Science</span>
+        {/* Trainer Card Container */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-br from-blue-900/80 to-blue-800/60 backdrop-blur-sm border-2 border-pokemon-blue/50 rounded-xl p-6 shadow-xl"
+        >
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Left Panel - Information */}
+            <div className="flex-1">
+              {/* Trainer Card Info */}
+              <div className="bg-blue-800/40 rounded-lg p-6 mb-6 border border-blue-700/50">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between border-b border-blue-600/30 pb-2">
+                    <span className="text-sm text-gray-300 uppercase tracking-wider">Major</span>
+                    <span className="text-lg font-semibold text-pokemon-yellow">Computer Science</span>
+                  </div>
+                  <div className="flex items-center justify-between border-b border-blue-600/30 pb-2">
+                    <span className="text-sm text-gray-300 uppercase tracking-wider">Concentration</span>
+                    <span className="text-lg font-semibold text-pokemon-blue">Machine Intelligence</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-300 uppercase tracking-wider">Region</span>
+                    <span className="text-lg font-semibold text-pokemon-red">Purdue University</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-sm text-gray-400 uppercase tracking-wider mb-1">Concentration</span>
-                <span className="text-lg font-semibold text-pokemon-blue">Machine Intelligence</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-sm text-gray-400 uppercase tracking-wider mb-1">Region</span>
-                <span className="text-lg font-semibold text-pokemon-red">Purdue University</span>
+
+              {/* Badges Earned Section */}
+              <div>
+                <h3 className="text-2xl font-bold text-pokemon-yellow mb-4">
+                  Badges Earned
+                </h3>
+                <div className="flex flex-wrap gap-3 md:gap-4">
+                  {skillBadges.map((badge, i) => (
+                    <SkillBadge
+                      key={badge.name}
+                      name={badge.name}
+                      icon={badge.icon}
+                      color={badge.color}
+                      delay={0.05 * i}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-          </motion.div>
 
-          {/* Badges Earned Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-12"
-          >
-            <h3 className="text-2xl font-bold text-pokemon-yellow mb-6 text-center">
-              Badges Earned
-            </h3>
-            <div className="flex justify-center flex-wrap gap-4 md:gap-6">
-              {skillBadges.map((badge, i) => (
-                <SkillBadge
-                  key={badge.name}
-                  name={badge.name}
-                  icon={badge.icon}
-                  color={badge.color}
-                  delay={0.05 * i}
+            {/* Right Panel - Trainer Sprite */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex-shrink-0"
+            >
+              <div className="bg-blue-800/60 rounded-lg p-4 border border-blue-700/50 w-64 h-64 md:w-72 md:h-72 flex items-center justify-center">
+                <img
+                  src="/richin-headshot.png"
+                  alt="Richin Mrudul"
+                  className="w-full h-full rounded-lg object-cover"
+                  style={{
+                    objectPosition: "center 20%"
+                  }}
                 />
-              ))}
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
-
-        {/* Profile Picture and Bio */}
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex-shrink-0 flex justify-center"
-          >
-            <img
-              src="/richin-headshot.png"
-              alt="Richin Mrudul"
-              className="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover border-4 border-pokemon-yellow/30"
-              style={{
-                objectPosition: "center 20%"
-              }}
-            />
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-gray-300 text-lg leading-relaxed flex-1"
-          >
-            Hi! My name is <span className="text-pokemon-yellow font-semibold">Richin Mrudul</span>, 
-            and I'm a second-year Computer Science student at Purdue University with a 
-            concentration in <span className="text-pokemon-blue">Machine Intelligence</span>.
-            I love using technology to build projects that solve real-world problems and make people's lives easier.
-            Outside of coding, I enjoy playing guitar and drums, cooking, eating good food, and hanging out with my friends.
-            I'm also a huge <span className="text-pokemon-red">Sacramento Kings</span> fan and hope we go to the playoffs soon.
-          </motion.p>
-        </div>
       </div>
     </section>
   );

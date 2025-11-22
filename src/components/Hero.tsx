@@ -34,12 +34,12 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="mb-4"
+          className="mb-6"
         >
-          <p className="text-pokemon-blue text-lg font-semibold mb-1">
+          <p className="text-pokemon-blue text-base sm:text-lg font-semibold mb-1">
             Class: Software Engineer
           </p>
-          <p className="text-pokemon-blue text-lg font-semibold">
+          <p className="text-pokemon-blue text-base sm:text-lg font-semibold">
             Region: Purdue University
           </p>
         </motion.div>
@@ -48,10 +48,14 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="text-lg sm:text-xl text-gray-300 max-w-2xl"
+          className="text-base sm:text-lg text-white max-w-2xl leading-relaxed"
         >
-          A Computer Science student passionate about software engineering,
-          AI, and full-stack development.
+          Hi! My name is <span className="text-pokemon-yellow font-semibold">Richin Mrudul</span>, 
+          and I'm a second-year Computer Science student at Purdue University with a 
+          concentration in <span className="text-pokemon-blue">Machine Intelligence</span>.
+          I love using technology to build projects that solve real-world problems and make people's lives easier.
+          Outside of coding, I enjoy playing guitar and drums, cooking, eating good food, and hanging out with my friends.
+          I'm also a huge <span className="text-pokemon-red">Sacramento Kings</span> fan and hope we go to the playoffs soon.
         </motion.p>
       </motion.div>
 
