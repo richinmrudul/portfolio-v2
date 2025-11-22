@@ -7,3 +7,12 @@ html, body {
   background-color: #0f172a;
   color: white;
 }
+
+/* Pokéball cursor on hover for interactive elements */
+a, button, [role="button"] {
+  cursor: pointer;
+}
+
+a:hover, button:hover, [role="button"]:hover {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="%23FF3E4D" stroke-width="2" fill="white"/><line x1="12" y1="2" x2="12" y2="22" stroke="%23FF3E4D" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="%23FF3E4D"/><circle cx="12" cy="12" r="1.5" fill="white"/></svg>') 12 12, auto;
+}

@@ -92,7 +92,7 @@ const Experience: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl font-bold text-cyan-400 mb-16 text-center"
+          className="text-4xl font-bold text-pokemon-yellow mb-16 text-center"
         >
           Work Experience
         </motion.h2>
@@ -114,7 +114,13 @@ const Experience: React.FC = () => {
               >
                 {/* Content Card */}
                 <div className={`flex-1 ${exp.position === "left" ? "text-right" : "text-left"}`}>
-                  <div className="bg-slate-800/80 rounded-lg p-6 border border-cyan-500/30 hover:border-cyan-500/60 transition-colors">
+                  <motion.div
+                    whileHover={{
+                      rotate: [-0.5, 0.5, -0.5, 0.5, 0],
+                    }}
+                    transition={{ duration: 0.4 }}
+                    className="bg-slate-800/80 rounded-lg p-6 border border-pokemon-blue/30 shadow-[0_0_10px_#FFD34E20] hover:border-pokemon-blue/60 hover:shadow-[0_0_15px_#FFD34E30] transition-all"
+                  >
                     <div className={`flex ${exp.position === "left" ? "justify-end" : "justify-start"} items-baseline gap-3 mb-1 flex-wrap`}>
                       <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
                       <span className="text-white text-sm">{exp.dates}</span>
@@ -125,7 +131,7 @@ const Experience: React.FC = () => {
                         <li key={i}>{bullet}</li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Timeline Node */}
